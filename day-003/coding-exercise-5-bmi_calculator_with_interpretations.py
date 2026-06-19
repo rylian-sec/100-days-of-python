@@ -18,7 +18,12 @@ bmi = weight / (height ** 2)
 if bmi < 18.5:
     print("underweight")
 
-if bmi >= 25:
+# original code
+#if bmi >= 25:
+#    print("overweight")
+
+#corrected code
+elif bmi >25:
     print("overweight")
 
 else:
