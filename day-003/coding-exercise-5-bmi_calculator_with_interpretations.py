@@ -23,7 +23,7 @@ if bmi < 18.5:
 #    print("overweight")
 
 #corrected code
-elif bmi >25:
+elif bmi >= 25:
     print("overweight")
 
 else:
