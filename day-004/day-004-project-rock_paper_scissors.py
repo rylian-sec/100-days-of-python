@@ -40,12 +40,16 @@ print("Choose Rock, Paper, or Scissors\n")
 user_choice = int(input("Type 0 for Rock, 1 for Paper or 2 for Scissors: \n"))
 computer_choice = random.randint(0, 2)
 
+#Added guard rail if statement
 
-print("You chose:\n")
-print(rock_paper_scissors[user_choice])
+if user_choice > 2 or user_choice < 0:
+    print("You have chosen and invalid number. You lost!")
+else:
+    print("You chose:\n")
+    print(rock_paper_scissors[user_choice])
 
-print("\nI chose:\n")
-print(rock_paper_scissors[computer_choice])
+    print("\nI chose:\n")
+    print(rock_paper_scissors[computer_choice])
 
 if user_choice == 0:
     if computer_choice ==2:
