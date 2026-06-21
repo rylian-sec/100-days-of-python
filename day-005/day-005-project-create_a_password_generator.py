@@ -25,6 +25,7 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 # ***My code begins here***
 
 import random
+from random import SystemRandom #For the Hard Version
 
 password = ""
 
@@ -54,17 +55,18 @@ print(password)
 # what to Google.
 
 password_list = []
+rng = SystemRandom()
 
 for selected_letters in range(0, nr_letters):
-    password_list.append(random.choice(letters))
+    password_list.append(rng.choice(letters))
 
 for selected_symbols in range (0, nr_symbols):
-    password_list.append(random.choice(symbols))
+    password_list.append(rng.choice(symbols))
 
 for selected_numbers in range(0, nr_numbers):
-    password_list.append(random.choice(numbers))
+    password_list.append(rng.choice(numbers))
 
-random.shuffle(password_list)
+rng.shuffle(password_list)
 
 password = ""
 
