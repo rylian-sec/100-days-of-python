@@ -2,11 +2,11 @@
 
 friends = ["Alice", "Bob", "Charlie", "David", "Emanuel"]
 
-# My code begins here:
+# ***My code begins here***
 
 import random
 
-random_friend = random.randint(0, 4)
+random_friend = random.randint(0, len(friends) - 1)
 print(friends[random_friend])
 
 # The other way to do it, called out by Angela, in addition to the way
