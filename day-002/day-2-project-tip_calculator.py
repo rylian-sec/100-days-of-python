@@ -7,11 +7,15 @@
 # Very Optional Reading: Floating Point Arithmetic
 # https://docs.python.org/3/tutorial/floatingpoint.html
 
+# ***My code begins here***
+
 print("Welcome to the tip calculator!")
 bill = float(input("What was the total bill? $"))
 tip = int(input("What percentage tip would you like to give? 10 12 15 "))
 people = int(input("How many people to split the bill? "))
-per_person = (((bill / people) * (1 + (tip / 100))))
-#this line of code was my original. The next is better.
-#print("Each person should pay: $" + "{:.2f}".format(per_person))
+per_person = bill * (1 + tip / 100) / people
+
+# this line of code was my original. The next is better.
+# print("Each person should pay: $" + "{:.2f}".format(per_person))
+
 print(f"Each person should pay: ${per_person:.2f}")
