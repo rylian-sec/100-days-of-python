@@ -25,17 +25,17 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 # ***My code begins here***
 
 import random
-from random import SystemRandom #For the Hard Version
+from random import SystemRandom  #For the Hard Version
 
 password = ""
 
-for selected_letters in range(0, nr_letters):
+for _ in range(0, nr_letters):
     password += random.choice(letters)
 
-for selected_symbols in range(0, nr_symbols):
+for _ in range(0, nr_symbols):
     password += random.choice(symbols)
 
-for selected_numbers in range(0, nr_numbers):
+for _ in range(0, nr_numbers):
     password += random.choice(numbers)
 
 print(password)
@@ -57,13 +57,13 @@ print(password)
 password_list = []
 rng = SystemRandom()
 
-for selected_letters in range(0, nr_letters):
+for _ in range(0, nr_letters):
     password_list.append(rng.choice(letters))
 
-for selected_symbols in range (0, nr_symbols):
+for _ in range(0, nr_symbols):
     password_list.append(rng.choice(symbols))
 
-for selected_numbers in range(0, nr_numbers):
+for _ in range(0, nr_numbers):
     password_list.append(rng.choice(numbers))
 
 rng.shuffle(password_list)
