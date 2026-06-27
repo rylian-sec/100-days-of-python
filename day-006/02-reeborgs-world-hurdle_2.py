@@ -18,5 +18,5 @@ def jump():
     move()
     turn_left()
 
-while at_goal() == False:
+while not at_goal():
     jump()

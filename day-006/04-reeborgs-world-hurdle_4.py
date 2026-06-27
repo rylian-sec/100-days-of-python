@@ -10,16 +10,16 @@ def turn_right():
 
 def jump():
     turn_left()
-    while wall_on_right() == True:
+    while wall_on_right():
         move()
     turn_right()
     move()
     turn_right()
-    while front_is_clear() == True:
+    while front_is_clear():
         move()
     turn_left()
 
-while at_goal() != True:
+while not at_goal():
     if wall_in_front():
         jump()
     else:

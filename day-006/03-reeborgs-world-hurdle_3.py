@@ -17,8 +17,8 @@ def jump():
     move()
     turn_left()
 
-while at_goal() == False:
-    if front_is_clear() == True:
+while not at_goal():
+    if front_is_clear():
         move()
     else:
         jump()

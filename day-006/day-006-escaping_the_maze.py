@@ -11,17 +11,14 @@ def turn_right():
     turn_left()
 
 
-while at_goal() != True:
+while not at_goal():
     if right_is_clear():
         turn_right()
-        if front_is_clear():
-            move()
+        move()
 
     elif front_is_clear():
         move()
 
-    elif wall_on_right() and wall_in_front():
+    else:
         turn_left()
-        if front_is_clear():
-            move()
             
