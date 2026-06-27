@@ -39,27 +39,29 @@ print("Your mission is to find the treasure.\n")
 
 # My code, for project completion, begins here.
 
-left_or_right = input("You can go left or right.\n Enter L or R: ")
+direction_choice = input("You can go left or right.\nEnter L or R: ").lower()
 
-if left_or_right == "L" or left_or_right == "l":
+if direction_choice == "l":
     print("\nYou walk for a few hours and....")
     print("You have come to a dock on a beautiful and vast lake, with an island in the middle.\n")
-    swim_or_wait = input("Would you like to Swim across or Wait for a boat? \n Enter S or W: ")
+    swim_or_wait = input("Would you like to Swim across or Wait for a boat? \nEnter S or W: ").lower()
 
-    if swim_or_wait == "W" or swim_or_wait == "w":
+    if swim_or_wait == "w":
         print("\nA boat arrives and ferries you to the island.")
         print("In the center of the island is a small building with three doors, one Red, one Yellow, and one Blue.\n")
-        red_blue_yellow = input("Which would you like to open? \n Enter R, B, or Y: ")
+        door_choice = input("Which would you like to open? \nEnter R, B, or Y: ").lower()
 
-        if red_blue_yellow == "Y" or red_blue_yellow == "y":
+        if door_choice == "y":
             print("\nYou found the treasure! You Win!")
-        elif red_blue_yellow == "R" or red_blue_yellow == "r":
-            print ("\nA fireball envelopes you.\nGame Over.")
-        else:
+        elif door_choice == "r":
+            print("\nA fireball envelopes you.\nGame Over.")
+        elif door_choice == "b":
             print("\nA giant tiger jumps out and eats you.\nGame Over.")
+        else:
+            print("\nThat is not a valid door. Game Over.")
 
     else:
         print("\nA giant trout swallows you whole.\nGame Over.")
 
 else:
-    print("You fall into a deep hole. \n Game Over.")
+    print("You fall into a deep hole. \nGame Over.")

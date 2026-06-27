@@ -19,12 +19,13 @@ if bmi < 18.5:
     print("underweight")
 
 # original code
-#if bmi >= 25:
-#    print("overweight")
+# if bmi >= 25:
+#     print("overweight")
 
-#corrected code
-elif bmi >= 25:
-    print("overweight")
+# Corrected code
+
+elif bmi < 25:
+    print("normal weight")
 
 else:
-    print("normal weight")
+    print("overweight")
