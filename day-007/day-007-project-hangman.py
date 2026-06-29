@@ -1,55 +1,59 @@
-import random
+# This is my code for the day 7 project, Hangman.
 
 from hangman_words import word_list
+from hangman_art import logo
+from hangman_art import stages
+import random
+
+placeholder = ""
+correct_guess = []
+game_over = False
 lives = 6
 
-from hangman_art import logo
 print(logo)
 
 chosen_word = random.choice(word_list)
-print(chosen_word)
+# print(chosen_word)
 
-placeholder = ""
-word_length = len(chosen_word)
-for position in range(word_length):
-    placeholder += "_"
-print("Word to guess: " + placeholder)
 
-game_over = False
-correct_letters = []
+for _ in chosen_word:
+    placeholder += "_ "
+
+print(placeholder)
 
 while not game_over:
 
-    print(f"****************************{lives}/6 LIVES LEFT****************************")
-    guess = input("Guess a letter: ").lower()
+    print(f"You have {lives}/6 lives left.")
+    player_guess = input("Guess a letter: ").lower()
 
-    if guess in correct_letters:
-        print(f"You've already guessed {guess}")
     display = ""
 
+    if player_guess in correct_guess:
+        print(f"You've already guessed {player_guess}. Try again.")
+
     for letter in chosen_word:
-        if letter == guess:
-            display += letter
-            correct_letters.append(guess)
-        elif letter in correct_letters:
-            display += letter
+        if letter == player_guess:
+            display += letter + " "
+            correct_guess.append(player_guess)
+        elif letter in correct_guess:
+            display += letter + " "
         else:
-            display += "_"
+            display += "_ "
 
-    print("Word to guess: " + display)
-
-    if guess not in chosen_word:
+    if player_guess not in chosen_word:
+        print(f"Sorry, {player_guess} is not in the word.")
         lives -= 1
-        print(f"You guessed {guess}, that letter is not in the word. You have lost a life.")
 
-        if lives == 0:
-            game_over = True
+    print(display)
 
-            print(f"The word was {chosen_word}! You Lose!")
-
-    if "_" not in display:
+    if lives == 0:
         game_over = True
-        print("****************************YOU WIN****************************")
+        print(f"The word was {chosen_word}! You lose!")
 
-    from hangman_art import stages
+    if "_ " not in display:
+        game_over = True
+        print("You win!")
+
     print(stages[lives])
+
+
